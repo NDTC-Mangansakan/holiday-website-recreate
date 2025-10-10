@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+@theme{
+    --color-primaryOrange: #ff5100 ;
+}
+
+body{
+    overflow-x: hidden;
+    @apply font-mono;
+}
+
+/* .grid-item {
+    transition: all 0.3s ease;
+}
+
+.grid-item .hidden-text {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.grid-item:hover .hidden-text {
+    max-height: 200px;
+    opacity: 1;
+} */
