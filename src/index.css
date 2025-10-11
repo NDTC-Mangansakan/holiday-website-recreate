@@ -1,26 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
 @import 'tailwindcss';
 
 @theme{
     --color-primaryOrange: #ff5100 ;
+    --color-CreditsBgColor:#706d6a;
 }
 
 body{
     overflow-x: hidden;
-    @apply font-mono;
+    font-family:"BBH+Sans+Hegarty", sans-serif;
 }
-
-/* .grid-item {
-    transition: all 0.3s ease;
-}
-
-.grid-item .hidden-text {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-}
-
-.grid-item:hover .hidden-text {
-    max-height: 200px;
-    opacity: 1;
-} */

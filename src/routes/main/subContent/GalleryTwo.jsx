@@ -25,7 +25,7 @@ const GalleryTwo = () => {
     return (
         <div className="flex flex-col md:flex-row">
             {galleryTwoImgData.map((item) => (
-                <Link to={item.presenting}
+                <Link to={item.for}
                     key={item.for}
                     className="flex flex-col items-center overflow-hidden transition-all duration-500 ease-in-out w-full md:w-1/3"
                 >
@@ -51,12 +51,12 @@ const GalleryTwo = () => {
                     </div>
 
                     {/* Text content triggered by hover */}
-                    <div className="w-full text-center overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 peer-hover:max-h-96 peer-hover:opacity-100">
+                    <div className="w-full text-center overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 peer-hover:max-h-130 peer-hover:opacity-100">
                         <div className="py-5">
-                            <p className="text-lg">FOR</p>
-                            <p className="text-4xl font-extrabold sm:text-5xl lg:text-6xl xl:text-8xl">{item.for}</p>
+                            <p className=" text-lg">FOR</p>
+                            <p className="tracking-tighter text-4xl font-extrabold sm:text-5xl lg:text-7xl">{item.for}</p>
                             <p className="text-lg mt-3">PRESENTING</p>
-                            <p className="text-4xl font-extrabold sm:text-5xl lg:text-6xl xl:text-8xl">{item.presenting}</p>
+                            <p className="tracking-tighter text-4xl font-extrabold sm:text-5xl lg:text-7xl">{item.presenting}</p>
                         </div>
                     </div>
                 </Link>

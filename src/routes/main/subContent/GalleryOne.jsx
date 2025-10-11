@@ -56,11 +56,11 @@ const GalleryOne = () => {
 
                     {/* Text content with smooth expansion - triggered by image hover */}
                     <div className="w-full text-center overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 peer-hover:max-h-96 peer-hover:opacity-100">
-                        <div className="py-5">
-                            <p className="text-lg">FOR</p>
-                            <p className="text-4xl font-extrabold sm:text-5xl lg:text-6xl xl:text-8xl">{item.for}</p>
-                            <p className="text-lg mt-3">PRESENTING</p>
-                            <p className="text-4xl font-extrabold sm:text-5xl lg:text-6xl xl:text-8xl">{item.presenting}</p>
+                        <div className="py-5 flex flex-col">
+                            <span className="text-lg">FOR</span>
+                            <span className="tracking-tighter text-4xl font-extrabold sm:text-5xl lg:text-7xl">{item.for}</span>
+                            <span className="text-lg mt-3">PRESENTING</span>
+                            <span className="tracking-tighter text-4xl font-extrabold sm:text-5xl lg:text-7xl">{item.presenting}</span>
                         </div>
                     </div>
                 </div>
