@@ -1,3 +1,5 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { Link } from "react-router-dom";
 
 const galleryTwoImgData = [
@@ -22,12 +24,25 @@ const galleryTwoImgData = [
 ]
 
 const GalleryTwo = () => {
+
+    useGSAP(() => {
+        gsap.from('.gallery-two-img', {
+            scrollTrigger: {
+                trigger: '.gallery-two-img',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            delay: .3
+        })
+    }, [])
+
+
     return (
-        <div className="flex flex-col md:flex-row">
+        <div className="gallery-two-img flex flex-col md:flex-row">
             {galleryTwoImgData.map((item) => (
                 <Link to={item.for}
                     key={item.for}
-                    className="flex flex-col items-center overflow-hidden transition-all duration-500 ease-in-out w-full md:w-1/3"
+                    className=" flex flex-col items-center overflow-hidden transition-all duration-500 ease-in-out w-full md:w-1/3"
                 >
                     {/* Image container with fixed aspect ratio */}
                     <div className="group peer relative w-full aspect-3/4 overflow-hidden">

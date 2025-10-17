@@ -1,3 +1,5 @@
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 import { Link } from "react-router-dom"
 
 const galleryOneImgData = [
@@ -28,16 +30,37 @@ const galleryOneImgData = [
 ]
 
 const GalleryOne = () => {
+
+    useGSAP(() => {
+        gsap.from('.gallery-one-img-first', {
+            scrollTrigger:{
+                trigger: '.gallery-one-img-first',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            delay: .3
+        })
+
+        gsap.from('.gallery-one-img-sec', {
+            scrollTrigger: {
+                trigger: '.gallery-one-img-sec',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            delay: .3
+        })
+    }, [])
+
     return (
         <>
-            {galleryOneImgData.map(item => (
+            {galleryOneImgData.map((item, i) => (
                 <div key={item.img} className="flex flex-col items-center overflow-hidden transition-all duration-500 ease-in-out">
                     {/* Image with group class for hover trigger */}
                     <Link to={item.for} className="group peer relative overflow-hidden">
                         <img
                             src={item.img}
                             alt={item.for}
-                            className={`w-full aspect-auto 
+                            className={`${i <= 1 ? 'gallery-one-img-first' : 'gallery-one-img-sec'} w-full aspect-auto 
                                      ${item.vid && 'hover:opacity-0 transition-opacity duration-500'} transition-transform duration-500 group-hover:scale-105`}
                         />
                         <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>

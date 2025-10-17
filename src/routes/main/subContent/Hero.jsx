@@ -1,6 +1,19 @@
+import { useGSAP } from '@gsap/react'
 import heroText from '../../../assets/HOLIDAYS.svg'
+import gsap from 'gsap'
 
 const Hero = () => {
+
+    useGSAP(() => {
+        gsap.from('.hero-text', {
+            y: 100,
+            opacity: 0,
+            delay: .3,
+            duration: .8
+        })
+    }, [])
+
+
     return (
         <>
             <div className="relative h-screen w-full">
@@ -17,7 +30,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-black/40" />
 
                 {/* Hero content */}
-                <div className="absolute inset-0 z-10 flex items-center h-full px-5">
+                <div className="hero-text absolute inset-0 z-10 flex items-center h-full px-5">
                     <img src={heroText} alt="" className='w-full aspect-auto' />
                 </div>
             </div>

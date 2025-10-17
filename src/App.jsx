@@ -2,6 +2,10 @@ import MainContent from './routes/main/MainContent'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import Album, { albumDataLoader } from './routes/albumComponent/Album'
 import RootLayout from './routes/RootLayout'
+import { ScrollTrigger, SplitText } from 'gsap/all'
+import gsap from 'gsap'
+
+gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const router = createBrowserRouter(
   createRoutesFromElements(
